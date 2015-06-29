@@ -1,7 +1,11 @@
+/*
+ * wrong
+ */
 
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <stdio.h>
 
 static int commlen(const char *str1, const char *str2)
 {
@@ -29,6 +33,7 @@ int main(int argc, char **argv)
 					const void *))strcmp);
 	qsort(post2, l2, sizeof(char *), (int (*)(const void *, 
 					const void *))strcmp);
+
 	i = j = 0;
 	maxlen = -1;
 	while (i < l1 && j < l2) {
@@ -46,6 +51,8 @@ int main(int argc, char **argv)
 	for (i = 0; i < maxlen; i++)
 		putchar(str[i]);
 	putchar('\n');
+	for (i = 0; i < l1; i++)
+		printf("%s\n", post1[i]);
 	free(post1);
 	free(post2);
 	return(0);
